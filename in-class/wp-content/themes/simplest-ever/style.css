@@ -1,0 +1,56 @@
+/*
+Theme Name: Simplest Ever
+Author: Maksim Belenkov
+Description: The simplest starter theme for learning!
+License: sD34j9
+Version: 0.1
+*/
+
+body {
+  max-width: 60em;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+#header,
+#footer,
+#content,
+#sidebar {
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+#tags a {
+	display: inline-block;
+	background-color: crimson;
+	color: white;
+	padding: .2em;
+	border-radius: .5em;
+	margin: .2em;
+	text-decoration: none;
+}
+#tags a:hover {
+	background-color: tomato;
+}
+
+@media screen and (min-width:600px) {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  .nav li {
+    display: inline-block;
+  }
+  #content {
+    float: left;
+    width: 70%;
+  }
+  #sidebar {
+    float: right;
+    width: 30%;
+  }
+  #footer {
+    clear: both;
+  }
+}
