@@ -1,0 +1,29 @@
+/* remember not to style anything generic, like <p> or you will aggravate the site owner! */
+#rad-announcement-bar {
+	background-color: aquamarine;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0;
+	z-index: 999999;
+	text-align: center;
+	color: #000;
+	padding: .2em;
+	box-shadow: 0px 3px 10px rgba(0,0,0,.5);
+}
+.admin-bar #rad-announcement-bar {
+	top: 32px;
+}
+#rad-announcement-bar a {
+	background-color: darkturquoise;
+	display: inline-block;
+	padding: .2em .5em;
+	color: #FFF;
+	border-radius: .5em;
+	margin-left: .7em;
+	transition: background .3s ease-in;
+	box-shadow: 0px 1px 0 rgba(0,50,100,.5);
+}
+#rad-announcement-bar a:hover {
+	background-color: orange;
+}
