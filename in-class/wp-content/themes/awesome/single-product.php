@@ -13,6 +13,10 @@
 					<?php the_title(); ?> 
 				</a>
 			</h2>
+
+			<?php the_terms($post->ID, 'brand', '<h3>Brand: ', ', ', '</h3>'); ?>
+			<?php the_terms($post->ID, 'feature', '<h3>Features: ', ', ', '</h3>'); ?>
+
 			<?php the_post_thumbnail('large', array('class' => 'product-image')); //don't forget to activate in functions ?>
 			<div class="entry-content">
 				<?php the_meta(); // list of all custom fields(price & size) ?>
@@ -43,5 +47,4 @@
 
 </main><!-- end #content -->
 
-<?php get_sidebar(); //include sidebar.php ?>
 <?php get_footer(); //include footer.php ?>
