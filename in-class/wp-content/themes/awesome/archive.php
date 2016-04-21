@@ -5,32 +5,19 @@
 		if( have_posts() ): ?>
 
 		<h2 class="archive-title">
-			<?php
-				// what kind of archive is this?
-				if(is_category()){
-					echo 'Posts by Category: ';
-					single_cat_title();
-				} else if(is_tag()){
-					echo 'Posts tagged with: ';
-					single_term_title();
-				} else if(is_date()){
-					the_archive_title();
-				} else {
-					echo 'Posts Archive';
-				}
-			?>
+			Shop for the goods!
 		</h2>
 
 		<?php while( have_posts() ): the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" 
 		<?php post_class('cf clearfix'); ?>>
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?></a>
 			<h2 class="entry-title"> 
 				<a href="<?php the_permalink(); ?>"> 
 					<?php the_title(); ?> 
 				</a>
 			</h2>
-			<?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?>
 			<div class="entry-content">
 				<?php 
 				//if viewing a single post or page, show full content. otherwise, show the short content (excerpt)
@@ -40,14 +27,15 @@
 					the_excerpt();
 				}
 				 ?>
-			</div>
-			<div class="postmeta"> 
-				<span class="author"> Posted by: <?php the_author(); ?></span>
-				<span class="date"><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
-				<span class="num-comments"> <?php comments_number(); ?></span>
-				<span class="categories"><?php the_category(); ?></span>
-				<span class="tags"><?php the_tags(); ?></span> 
-			</div><!-- end postmeta -->			
+
+				 <?php
+				 	// get the 'Price' custom field
+				 	$price = get_post_meta($post->ID, 'Price', true);
+				 	if($price){
+				 ?>
+				 <span class="product-price"><?php echo $price; ?></span>
+				 <?php } // end if price ?>
+			</div>	
 		</article><!-- end post -->
 
 		<?php endwhile; ?>
