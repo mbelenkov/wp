@@ -8,3 +8,15 @@ Version: 1.0
 Tags: TODO: add some tags
 Text Domain: TODO: theme name
 */
+
+body {
+	background-color: #1c1919;
+	color: #FFF;
+}
+a {
+	color: #ff9800;
+}
+header,
+footer {
+	background-color: #7e8aa2;
+}
