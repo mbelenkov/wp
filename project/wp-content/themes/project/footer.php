@@ -1,5 +1,6 @@
 <footer id="footer" role="contentinfo">
-  &copy; 2015 by SITE TITLE. All Rights Reserved.
+	<section class="footer-widgets">Widget Area</section>
+	<p>&copy; 2015 by <?php bloginfo('name'); ?>. All Rights Reserved.</p>
 </footer>
 
 </div>

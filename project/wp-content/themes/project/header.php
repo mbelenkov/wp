@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
-  <title></title>
-  <meta charset="utf-8">
+  <title><?php wp_title(); ?></title>
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" media="all" href="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/styles/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/styles/reset.css" />
   <?php wp_head(); ?>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <div class="wrapper">
-<header role="banner" id="header">
-  <h1 class="site-title"><a href="path/to/frontpage">SITE NAME</a></h1>
-  <h2>SITE DESCRIPTION</h2>
-  <nav>
+<header role="banner">
+  <h1 class="site-title">
+    <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home">
+      <?php bloginfo('name'); ?>
+    </a>
+  </h1>
+
+  <?php get_search_form(); ?>
+
+  <nav class="cf">
     <ul class="nav">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -23,10 +30,4 @@
       <li><a href="#">Blog</a></li>
     </ul>
   </nav>
-
-  <form method="get" action="SEARCH_PARSER">
-    <label>Search for:</label>
-    <input type="text" />
-    <input type="submit" value="Search" />
-  </form>
 </header>

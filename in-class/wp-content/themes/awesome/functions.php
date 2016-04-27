@@ -148,4 +148,56 @@ function awesome_widget_areas(){
 	));
 }
 
+/**
+*	Display a lovely list of any number of products
+*	@param integer		$number 	the number of products to show
+*	@param string 		$title 		the title above the list
+*	@return mixed 					HTML outpout for the list and title
+*/
+function awesome_products($number = 6, $title){
+	// custom query to get up to 6 products, newest first
+	$product_query = new WP_Query(array(
+		'post_type'			=>	'product', // custom post type we registered
+		'posts_per_page'	=>	$number,
+	));
+
+	// custom loop
+	if($product_query->have_posts()){
+	?>
+		<h2><?php echo $title; ?></h2>
+		<ul class="latest-products">
+			<?php
+				while($product_query->have_posts()){
+				$product_query->the_post();
+			?>
+			<li>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail('thumbnail'); ?>
+					<div class="product-info">
+						<h3><?php the_title(); ?></h3>
+						<p><?php the_excerpt(); ?></p>
+					</div>
+				</a>
+			</li>
+			<?php } // end while loop ?>
+		</ul>
+		<?php
+			} else { // end if
+				echo 'No Products Found';
+			} // end else
+
+			// clean up the $post object
+			wp_reset_postdata();
+			// end of custom query & loop
+}
+
+// just an example of how to alter the default loop
+// this wil 'hide' posts in category number 5 from the blog
+add_action('pre_get_posts', 'awesome_exclude_categories');
+function awesome_exclude_categories($query){
+	// make sure we're in the blog
+	if($query->is_home()){
+		$query->set('category__not_in', array(5));
+	}
+}
 //no close PHP
