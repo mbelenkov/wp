@@ -1,5 +1,5 @@
 /*
-Theme Name: TODO: theme name
+Theme Name: Smooth and Silky
 Theme URI: TODO: theme URI
 Description: TODO: add a description
 Author: Maksim Belenkov
@@ -64,22 +64,23 @@ h1 {
 	font-size: 2em;
 }
 h2 {
-	font-size: 1.7em;
-}
-h3 {
 	font-size: 1.5em;
 }
-h4 {
+h3 {
 	font-size: 1.3em;
 }
-h5 {
+h4 {
 	font-size: 1.1em;
 }
-h6 {
+h5 {
 	font-size: .9em;
+}
+h6 {
+	font-size: .7em;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat';
+	margin: 5px 0;
 }
 form#searchform {
 	display: inline;
@@ -124,6 +125,19 @@ header a:hover {
 }
 header nav li a:hover {
 	border-bottom: 2px solid #ff9800;
+}
+main .entry-content li {
+	border-left: 2px solid #FFF;
+	padding-left: 3px;
+	margin: 5px 0;
+}
+main {
+	line-height: 1.3em;
+}
+blockquote:before {
+	content: "\f10d";
+	font-family: FontAwesome;
+	color: #7E8AA2;
 }
 section.blog-posts {
 	width: 67.5%;

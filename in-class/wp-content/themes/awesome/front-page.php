@@ -5,8 +5,15 @@
 		if( have_posts() ): ?>
 		<?php while( have_posts() ): the_post(); ?>
 
-		<?php the_post_thumbnail('big-banner'); //don't forget to activate in functions ?>
-		
+		<?php
+			if(function_exists('rad_slider')):
+				rad_slider();
+			else:
+				//don't forget to activate in functions
+				the_post_thumbnail('big-banner');
+			endif;
+		?>
+
 		<article id="post-<?php the_ID(); ?>" 
 		<?php post_class('cf clearfix'); ?>>	
 

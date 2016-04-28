@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-  <title><?php wp_title(); ?></title>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" type="text/css" media="all" href="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/styles/reset.css" />
@@ -18,16 +17,16 @@
       <?php bloginfo('name'); ?>
     </a>
   </h1>
+  <h2 class="site-description"><?php bloginfo('description'); ?></h2>
 
   <?php get_search_form(); ?>
 
-  <nav class="cf">
-    <ul class="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-  </nav>
+  <?php
+    wp_nav_menu(array(
+      'theme_location'      =>  'main_menu',
+      'fallback_cb'         =>  'smoothandsilky_fallback',
+      'container'           =>  'nav',
+      'menu_class'          =>  'nav'
+    ));
+  ?>
 </header>
