@@ -33,3 +33,34 @@ function smoothandsilky_pagination(){
 		</section>
 	<?php
 }
+add_action('widgets_init', 'smoothandsilky_widget_areas');
+function smoothandsilky_widget_areas(){
+	register_sidebar(array(
+		'name'			=>	'Blog Sidebar',
+		'id'			=>	'blog-sidebar',
+		'description'	=>	'Appears on the blog posts and individual posts pages.',
+		'before_widget'	=>	'<section id="%1$s" class="blog-widgets %2$s">',
+		'after_widget'	=>	'</section>',
+	));
+	register_sidebar(array(
+		'name'			=>	'Widgets Sidebar',
+		'id'			=>	'widgets-sidebar',
+		'description'	=>	'Appears on the pages that are set to use the default template.',
+		'before_widget'	=>	'<section id="%1$s" class="page-widgets %2$s">',
+		'after_widget'	=>	'</section>',
+	));
+	register_sidebar(array(
+		'name'			=>	'Footer Widgets',
+		'id'			=>	'footer-widgets',
+		'description'	=>	'Appears in the footer of the website. Looks best with 4 or less widgets.',
+		'before_widget'	=>	'<section id="%1$s" class="footer-widgets %2$s">',
+		'after_widget'	=>	'</section>',
+	));
+	register_sidebar(array(
+		'name'			=>	'Footer Widgets 2',
+		'id'			=>	'footer-widgets-2',
+		'description'	=>	'Appears in the footer of the website. Another line for widgets under the first. Also looks best with 4 or less widgets.',
+		'before_widget'	=>	'<section id="%1$s" class="footer-widgets-2 %2$s">',
+		'after_widget'	=>	'</section>',
+	));
+}

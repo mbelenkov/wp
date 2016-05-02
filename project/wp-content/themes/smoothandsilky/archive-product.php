@@ -3,6 +3,7 @@
 <main id="content" class="cf">
   <section class="blog-posts">
     <?php if(have_posts()): ?>
+    <h2>Products</h2>
     <?php while(have_posts()): the_post(); ?>
 
     <article id="post-<?php the_id(); ?>">
@@ -13,10 +14,6 @@
       </h2>
 
       <div class="entry-content">
-        <div>
-          <span class="author">Posted by: <?php the_author(); ?></span> on 
-          <span class="date"><?php the_date(); ?></span>
-        </div>
         <?php
           if(is_singular()):
             the_content();
@@ -25,24 +22,16 @@
           endif;
         ?>
       </div>
-
-      <div class="postmeta">
-        <span class="categories"><?php the_category(); ?></span>
-        <span class="tags"><?php the_tags(); ?></span>
-        <span class="num-comments"><?php comments_number(); ?></span> 
-      </div>
     </article>
 
     <?php endwhile; ?>
 
-    <?php comments_template(); ?>
+    <?php smoothandsilky_pagination(); ?>
 
     <?php else: ?>
-      <h2>There are no blog posts here.</h2>
+      <h2>There are no products here.</h2>
     <?php endif; ?>
   </section>
-
-  <?php get_sidebar(); ?>
 </main>
 
 <?php get_footer(); ?>

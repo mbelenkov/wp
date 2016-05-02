@@ -6,9 +6,6 @@
 </div>
 
 <main id="content" class="cf">
-
-
-
   <section class="blog-posts">
     <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
