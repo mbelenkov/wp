@@ -4,13 +4,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-	<link rel="stylesheet" type="text/css" media="all" href="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/styles/reset.css" />
 	<?php 
 	//Necessary in <head> for JS and plugins to work. 
 	//I like it before style.css loads so the theme stylesheet is more specific than all others.
 	wp_head();  ?>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
 <body <?php body_class(); ?>>	
 	<div id="wrapper">

@@ -44,9 +44,15 @@
 
 	<?php endif;  //end THE LOOP ?>
 
+	<?php
+		if(get_theme_mod('awesome_show_products')):
+	?>
 	<section class="featured-content">
 		<?php awesome_products(6, 'Newest Products'); // custom function to show products! ?>
 	</section>
+	<?php
+		endif; // end if show products
+	?>
 
 </main><!-- end #content -->
 

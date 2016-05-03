@@ -43,6 +43,17 @@ add_theme_support('title-tag');
 add_image_size( 'big-banner', 1050, 300, true );
 
 /*
+*	Attach style.css and reset.css
+*/
+add_action('wp_enqueue_scripts', 'awesome_styles');
+function awesome_styles(){
+	// reset.css
+	wp_enqueue_style('awesome_reset', get_stylesheet_directory_uri() . '/styles/reset.css');
+	// style.css
+	wp_enqueue_style('awesome_css', get_stylesheet_uri());
+}
+
+/*
 *	Make excerpts better!
 *	Change the default length and [...]
 */
@@ -200,4 +211,77 @@ function awesome_exclude_categories($query){
 		$query->set('category__not_in', array(5));
 	}
 }
+
+/**
+*	Theme Customiation API
+*	@link 	https://codex.wordpress.org/Theme_Customization_API
+*/
+add_action('customize_register', 'awesome_theme_customization');
+function awesome_theme_customization($wp_customize){
+	// text color
+	$wp_customize->add_setting('awesome_text_color', array(
+		'default'			=>	'#F2F2F2',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'text_color', array(
+		'label'				=>	'Body Text Color',
+		'section'			=>	'colors', // this one is built in
+		'settings'			=>	'awesome_text_color', // the setting registered above
+
+	)));
+	$wp_customize->add_setting('awesome_link_color', array(
+		'default'			=>	'#679EA5', // aqua
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_color', array(
+		'label'				=>	'Link &amp; Button Color',
+		'section'			=>	'colors',
+		'settings'			=>	'awesome_link_color',
+	)));
+	// footer text
+	// create a new section first
+	$wp_customize->add_section('awesome_text_content', array(
+		'title'				=>	'Custom Text',
+		'priority'			=>	30,
+	));
+	$wp_customize->add_setting('awesome_footer_text');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'footer_text', array(
+		'label'				=>	'Custom Footer Text',
+		'section'			=>	'awesome_text_content',
+		'settings'			=>	'awesome_footer_text',
+		'description'		=>	'Add your copyright or other legal notice.',
+	)));
+	// layout option - show products or not
+	$wp_customize->add_section('awesome_layout_options', array(
+		'title'				=>	'Layout Options',
+		'priority'			=>	30,
+	));
+	$wp_customize->add_setting('awesome_show_products', array(
+		'default'			=> 1, // true
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'show_products', array(
+		'type'				=>	'checkbox',
+		'label'				=>	'Show recent products on the front page.',
+		'section'			=>	'awesome_layout_options',
+		'settings'			=>	'awesome_show_products',
+	)));
+}
+// apply the customized colors to the css of the page
+add_action('wp_head', 'awesome_custom_css');
+function awesome_custom_css(){
+	$text_color = get_theme_mod('awesome_text_color');
+	$link_color = get_theme_mod('awesome_link_color');
+	?>
+	<style>
+		#content, #sidebar, #colophon {
+			color: <?php echo $text_color; ?>;
+		}
+		a {
+			color: <?php echo $link_color; ?>;
+		}
+		input[type=submit], button, .button, .readmore {
+			background-color: <?php echo $link_color; ?>;
+		}
+	</style>
+	<?php
+}
+
 //no close PHP
