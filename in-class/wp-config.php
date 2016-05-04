@@ -18,16 +18,28 @@
  * @package WordPress
  */
 
+if($_SERVER['HTTP_HOST'] == 'localhost'):
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'maksim_wp');
+
+	/** MySQL database username */
+	define('DB_USER', 'maksim_belenkov');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', '7nVH8prVyztH2L9z');
+else:
+	//live site
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'slashcry_awesome-test-migration');
+
+	/** MySQL database username */
+	define('DB_USER', 'slashcry_maksim');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'E0Cp~*wRfTk2');
+endif;
+
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'maksim_wp');
-
-/** MySQL database username */
-define('DB_USER', 'maksim_belenkov');
-
-/** MySQL database password */
-define('DB_PASSWORD', '7nVH8prVyztH2L9z');
-
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 
