@@ -3,7 +3,7 @@
 Plugin Name: Smooth and Silky Post Types Test
 Description: Adds the "products" post type for a shop section so you can test archive-product.php, single-product.php, and taxonomys.
 Author:	Maksim Belenkov
-Author URI:	#
+Author URI:	http://www.belenkovdesign.com
 License: GPLv3
 Version: 0.1
 */
@@ -26,6 +26,17 @@ function smoothandsilky_register_cpt(){
 			'thumbnail',
 			'custom-fields',
 			'excerpt',
+		),
+	));
+	register_taxonomy('brand', 'product', array(
+		'hierarchical'			=>	true,
+		'show_admin_column'		=>	true,
+		'labels'				=>	array(
+			'name'				=>	'Brands',
+			'singular_name'		=>	'Brand',
+			'add_new_item'		=>	'Add Brand',
+			'search_items'		=>	'Search Brands',
+			'not_found'			=>	'No Categories Found',
 		),
 	));
 }

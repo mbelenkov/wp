@@ -1,8 +1,10 @@
 <footer id="footer" role="contentinfo">
-	<?php
-		dynamic_sidebar('footer-widgets');
-		dynamic_sidebar('footer-widgets-2');
-	?>
+	<section class="footer-widgets-area">
+	<?php dynamic_sidebar('footer-widgets'); ?>
+	</section>
+	<section class="footer-widgets-area">
+	<?php dynamic_sidebar('footer-widgets-2'); ?>
+	</section>
 
 	<p>&copy; 2016 by <?php bloginfo('name'); ?>. All Rights Reserved.</p>
 </footer>

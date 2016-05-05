@@ -2,6 +2,7 @@
 
 <main id="content" class="cf">
   <section class="blog-posts">
+    <a href="<?php echo get_post_type_archive_link('product'); ?>">Back to Products</a>
     <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
 
@@ -9,11 +10,20 @@
       <h2 class="entry-title"><?php the_title(); ?></h2>
 
       <div class="entry-content">
-        <div>
-          <span class="author">Posted by: <?php the_author(); ?></span> on 
-          <span class="date"><?php the_date(); ?></span>
-        </div>
         <?php
+          the_post_thumbnail('large');
+          the_terms($post->ID, 'brand', '<h3>Brand: ', ', ', '</h3>');
+          $price = get_post_meta($post->ID, 'Price', true);
+          $weight = get_post_meta($post->ID, 'Weight', true);
+          if($price):
+        ?>
+          <p class="product-price"><?php echo $price; ?></p>
+        <?php
+          endif;
+          if($weight):
+        ?>
+          <p class="product-weight"><?php echo $weight; ?></p>
+        <?php endif;
           if(is_singular()):
             the_content();
           else:
@@ -25,20 +35,12 @@
       <div class="postmeta">
         <span class="categories"><?php the_category(); ?></span>
         <span class="tags"><?php the_tags(); ?></span>
-        <span class="num-comments"><?php comments_number(); ?></span> 
       </div>
     </article>
 
     <?php endwhile; ?>
-
-    <?php comments_template(); ?>
-
-    <?php else: ?>
-      <h2>There are no blog posts here.</h2>
     <?php endif; ?>
   </section>
-
-  <?php get_sidebar(); ?>
 </main>
 
 <?php get_footer(); ?>

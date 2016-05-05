@@ -3,10 +3,8 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" media="all" href="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/styles/reset.css" />
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <?php wp_head(); ?>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
 
 <body <?php body_class(); ?>>

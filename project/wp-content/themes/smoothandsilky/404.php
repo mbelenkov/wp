@@ -1,9 +1,13 @@
 <?php get_header(); ?>
 
-<main id="content">
+<main id="content" class="cf">
   <section class="blog-posts">
-    <?php if(have_posts()): ?>
-    <h2>Archive</h2>
+    <?php if(is_404()): ?>
+      <article class="404"> 
+        <h2>Error 404</h2>
+        <h3>Sorry! You took a wrong turn somewhere.</h3>
+      </article>
+    <?php elseif(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
 
     <article id="post-<?php the_id(); ?>">
@@ -22,6 +26,14 @@
           endif;
         ?>
       </div>
+
+      <div class="postmeta">
+        <span class="author">Posted by: <?php the_author(); ?></span>
+        <span class="date"><?php the_date(); ?></span>
+        <span class="num-comments"><?php comments_number(); ?></span>
+        <span class="categories"><?php the_category(); ?></span>
+        <span class="tags"><?php the_tags(); ?></span>
+      </div>
     </article>
 
     <?php endwhile; ?>
@@ -29,7 +41,7 @@
     <?php smoothandsilky_pagination(); ?>
 
     <?php else: ?>
-      <h2>There are no archives here.</h2>
+      <h2>There are no blog posts here.</h2>
     <?php endif; ?>
   </section>
 

@@ -3,7 +3,7 @@
 <main id="content" class="cf">
   <section class="blog-posts">
     <?php if(have_posts()): ?>
-    <h2>All Products</h2>
+    <h2><?php single_term_title(); ?> Products</h2>
     <?php while(have_posts()): the_post(); ?>
 
     <article id="post-<?php the_id(); ?>">
@@ -16,7 +16,6 @@
 
       <div class="entry-content">
         <?php
-          the_terms($post->ID, 'brand', '<h3>Brand: ', ', ', '</h3>');
           if(is_singular()):
             the_content();
           else:
@@ -38,11 +37,8 @@
     </article>
 
     <?php endwhile; ?>
-
-    <?php smoothandsilky_pagination(); ?>
-
     <?php else: ?>
-      <h2>There are no products here.</h2>
+      <h2>There are no brands here.</h2>
     <?php endif; ?>
   </section>
 
