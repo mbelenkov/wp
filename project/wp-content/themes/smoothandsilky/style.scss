@@ -1,0 +1,133 @@
+/*
+*Theme Name: Smooth and Silky
+*Theme URI: TODO: theme URI
+*Description: TODO: add a description
+*Author: Maksim Belenkov
+*Author URI: http://www.belenkovdesign.com;
+*Version: 1.0
+*Tags: TODO: add some tags
+*Text Domain: TODO: theme name
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Alegreya+Sans:400,400italic,700,300);
+
+// variables
+$color1_dark: #1C1919;
+$color2_blue: #7E8AA2;
+$color3_orange: #FF9800;
+$color4_white: #FFF;
+
+$font_1: 'Alegreya Sans';
+$font_2: 'Montserrat';
+
+// mixins
+
+
+// general styles
+body {
+	font-family: $font_1;
+	background-color: $color1_dark;
+	color: $color4_white;
+
+	em, i {
+		font: {
+			family: $font_1;
+			style: italic;
+			weight: 400;
+		}
+	}
+	strong {
+		font: {
+			family: $font_1;
+			weight: 700;
+		}
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $font_2;
+	}
+	p {
+		margin: 8px 0;
+	}
+	a {
+		text-decoration: none;
+		color: $color3_orange;
+		&:hover {
+			color: $color2_blue;
+		}
+	}
+	li {
+		list-style-type: none;
+	}
+	pre {
+	    white-space: pre-wrap;       /* CSS 3 */
+	    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	    white-space: -pre-wrap;      /* Opera 4-6 */
+	    white-space: -o-pre-wrap;    /* Opera 7 */
+	    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		margin: 7px 0;
+
+		&.alignleft {
+			float: left;
+		}
+		&.alignright {
+			float: right;
+		}
+	}
+	main {
+		line-height: 1.3em;
+		margin: 0 5%;
+
+		.blog-posts {
+			width: 67.5%;
+			float: left;
+		}
+	}
+	footer {
+		clear: both;
+		background-color: $color2_blue;
+		
+		p {
+			text-align: center;
+			padding: 10px;
+		}
+		.footer-widgets-area {
+			background-color: $color1_dark;
+			border-top: 1px solid $color2_blue;
+		}
+		.footer-widgets,
+		.footer-widgets-2 {
+			width: 25%;
+			display: inline-block;
+
+			.tagcloud {
+				/*a {
+					border: 1px solid $color3_orange;
+					&:hover {
+						border: 1px solid $color2_blue;
+					}
+				}*/
+			}
+			.calendar_wrap {
+				table {
+					border: 1px solid $color2_blue;
+				}
+			}
+		}
+	}
+	#sidebar {
+		width: 27.5%;
+		float: right;
+		margin-left: 5%;
+
+		select {
+			max-width: 100%;
+		}
+	}
+	.wp-caption {
+		max-width: 100%;
+	}
+}
