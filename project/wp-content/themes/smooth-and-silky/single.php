@@ -8,7 +8,7 @@
     <article id="post-<?php the_id(); ?>">
       <h2 class="entry-title"><?php the_title(); ?></h2>
 
-      <div class="entry-content">
+      <div class="entry-content cf">
         <div>
           <span class="author">Posted by: <?php the_author(); ?></span> on 
           <span class="date"><?php the_date(); ?></span>

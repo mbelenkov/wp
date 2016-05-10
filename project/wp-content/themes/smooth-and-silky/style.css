@@ -1,0 +1,260 @@
+/*
+*Theme Name: Smooth and Silky
+*Theme URI: http://www.belenkovdesign.com
+*Description: A simple theme that has a dark color scheme and color customization. With a few widget areas.
+*Author: Maksim Belenkov
+*Author URI: http://www.belenkovdesign.com
+*Version: 1.0
+*Tags: TODO: add some tags
+*Text Domain: TODO: theme name
+*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Alegreya+Sans:400,400italic,700,300);
+.cf {
+  *zoom: 1; }
+.cf:before, .cf:after {
+  content: "";
+  display: table; }
+.cf:after {
+  clear: both; }
+
+body {
+  font-family: "Alegreya Sans";
+  background-color: #1C1919;
+  color: #D3CBBD; }
+  body h1 {
+    font-size: 2em;
+    margin-bottom: 15px; }
+    body h1.site-title {
+      margin-bottom: 0; }
+  body h2 {
+    font-size: 1.5em;
+    margin: 25px 0 15px;
+    border-bottom: 1px solid #EB5937;
+    padding-bottom: 10px; }
+    body h2.entry-title {
+      margin: 0 0 5px 0; }
+  body h1 + h2 {
+    border: none;
+    padding: 0;
+    margin: 10px 0; }
+  body h3 {
+    font-size: 1.3em;
+    margin-bottom: 7px; }
+  body h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px; }
+  body h5 {
+    font-size: .9em;
+    margin-bottom: 0px; }
+  body h6 {
+    font-size: .7em;
+    margin-bottom: 0px; }
+  body em, body i {
+    font-family: "Alegreya Sans";
+    font-style: italic;
+    font-weight: 400; }
+  body strong {
+    font-family: "Alegreya Sans";
+    font-weight: 700; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Montserrat"; }
+  body a {
+    text-decoration: none;
+    color: #EB5937; }
+    body a:hover {
+      color: #456F74; }
+  body li {
+    list-style-type: none; }
+  body pre {
+    white-space: pre-wrap;
+    /* CSS 3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */ }
+  body img,
+  body figure {
+    background-color: #403D3C;
+    padding: 5px; }
+    body img figcaption,
+    body figure figcaption {
+      text-align: center;
+      margin-bottom: 7px; }
+    body img.aligncenter,
+    body figure.aligncenter {
+      margin: 10px auto; }
+    body img img,
+    body figure img {
+      padding: 0; }
+  body img {
+    max-width: 100%;
+    height: auto; }
+    body img.aligncenter {
+      margin: 7px auto; }
+  body .alignleft {
+    float: left;
+    margin: 10px 15px 10px 0; }
+  body .alignright {
+    float: right;
+    margin: 10px 0 10px 15px; }
+  body .aligncenter {
+    margin: 0 auto; }
+  body main {
+    line-height: 1.3em;
+    margin: 0 5%; }
+    body main .blog-posts {
+      width: 67.5%;
+      float: left; }
+      body main .blog-posts article {
+        border: 3px solid #EB5937;
+        border-left: 15px solid #EB5937;
+        margin-bottom: 10px;
+        padding: 10px; }
+      body main .blog-posts div {
+        margin-left: 10px; }
+        body main .blog-posts div.entry-content {
+          margin-left: 0; }
+      body main .blog-posts .author,
+      body main .blog-posts .date {
+        font-weight: 300; }
+      body main .blog-posts p,
+      body main .blog-posts ul,
+      body main .blog-posts dl,
+      body main .blog-posts ol,
+      body main .blog-posts address,
+      body main .blog-posts blockquote,
+      body main .blog-posts table,
+      body main .blog-posts pre {
+        margin: 0 10px; }
+      body main .blog-posts p {
+        margin: 8px 10px; }
+      body main .blog-posts blockquote p {
+        margin: -15px 0 0 20px; }
+      body main .blog-posts blockquote:before {
+        content: "\f10d";
+        font-family: FontAwesome; }
+      body main .blog-posts table {
+        border: 1px solid #403D3C; }
+        body main .blog-posts table thead {
+          border-bottom: 1px solid #403D3C;
+          text-align: center; }
+          body main .blog-posts table thead th {
+            border-right: 1px solid #403D3C;
+            padding: 10px; }
+        body main .blog-posts table tbody tr {
+          border-top: 1px solid #403D3C;
+          border-bottom: 1px solid #403D3C; }
+        body main .blog-posts table tbody th,
+        body main .blog-posts table tbody td {
+          border-right: 1px solid #403D3C;
+          padding: 5px 10px; }
+      body main .blog-posts dl dt {
+        font-weight: 700; }
+      body main .blog-posts dl dd {
+        border-left: 2px solid #EB5937;
+        padding-left: 5px;
+        margin-left: 5px;
+        margin-bottom: 10px; }
+      body main .blog-posts ul li {
+        border-left: 2px solid #EB5937;
+        padding-left: 5px;
+        margin: 5px 0 5px 5px; }
+      body main .blog-posts ol {
+        margin-left: 35px; }
+        body main .blog-posts ol li {
+          margin: 0 0 5px 0;
+          list-style-type: decimal-leading-zero; }
+          body main .blog-posts ol li ol {
+            margin-left: 2px;
+            border-left: 2px solid #EB5937;
+            padding-left: 20px; }
+            body main .blog-posts ol li ol li {
+              list-style-type: upper-latin; }
+              body main .blog-posts ol li ol li ol li {
+                list-style-type: lower-latin; }
+      body main .blog-posts abbr,
+      body main .blog-posts acronym {
+        border-bottom: 1px solid #EB5937; }
+      body main .blog-posts big {
+        font-weight: 700;
+        font-size: 1.2em; }
+      body main .blog-posts code,
+      body main .blog-posts pre,
+      body main .blog-posts kbd,
+      body main .blog-posts tt {
+        background-color: #403D3C;
+        color: #FFF;
+        padding: 5px; }
+      body main .blog-posts code,
+      body main .blog-posts kbd,
+      body main .blog-posts tt {
+        margin: 0 2px; }
+      body main .blog-posts ins {
+        background-color: #403D3C;
+        color: #D3CBBD;
+        padding: 5px;
+        margin: 0 2px; }
+      body main .blog-posts q {
+        font-style: italic; }
+      body main .blog-posts sub,
+      body main .blog-posts sup {
+        position: relative;
+        font-size: 75%;
+        line-height: 0; }
+      body main .blog-posts sub {
+        bottom: -4px;
+        margin: 0 1px; }
+      body main .blog-posts sup {
+        top: -8px;
+        margin: 0 1px; }
+      body main .blog-posts .postmeta {
+        border-top: 1px solid #EB5937;
+        padding-top: 5px;
+        margin-left: 0; }
+      body main .blog-posts .num-comments {
+        float: right; }
+      body main .blog-posts .post-categories {
+        margin-left: 0; }
+        body main .blog-posts .post-categories li {
+          margin: 5px 0 5px 2px; }
+      body main .blog-posts .comments {
+        margin-bottom: 10px; }
+  body footer {
+    clear: both;
+    background-color: #456F74; }
+    body footer p {
+      text-align: center;
+      padding: 10px;
+      margin: 0; }
+    body footer .footer-widgets-area {
+      background-color: #1C1919;
+      border-top: 1px solid #456F74; }
+    body footer .footer-widgets,
+    body footer .footer-widgets-2 {
+      width: 25%;
+      display: inline-block; }
+      body footer .footer-widgets .tagcloud,
+      body footer .footer-widgets-2 .tagcloud {
+        /*a {
+        	border: 1px solid $color3;
+        	&:hover {
+        		border: 1px solid $color2;
+        	}
+        }*/ }
+      body footer .footer-widgets .calendar_wrap table,
+      body footer .footer-widgets-2 .calendar_wrap table {
+        border: 1px solid #456F74; }
+  body #sidebar {
+    width: 27.5%;
+    float: right;
+    margin-left: 5%; }
+    body #sidebar select {
+      max-width: 100%; }
+  body .wp-caption {
+    max-width: 99%; }
+
+/*# sourceMappingURL=style.css.map */
