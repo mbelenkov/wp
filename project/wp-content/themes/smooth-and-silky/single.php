@@ -5,7 +5,7 @@
     <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
 
-    <article id="post-<?php the_id(); ?>">
+    <article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
       <h2 class="entry-title"><?php the_title(); ?></h2>
 
       <div class="entry-content cf">
@@ -15,12 +15,23 @@
         </div>
         <?php
           if(is_singular()):
+            if(has_post_thumbnail()){
+              the_post_thumbnail();
+            }
             the_content();
           else:
             the_excerpt();
           endif;
         ?>
       </div>
+
+      <?php
+        wp_link_pages(array(
+          'before'          =>  '<div class="link-pages-pag">',
+          'after'           =>  '</div>',
+          'next_or_number'  =>  'next',
+        ));
+      ?>
 
       <div class="postmeta">
         <span class="categories"><?php the_category(); ?></span>

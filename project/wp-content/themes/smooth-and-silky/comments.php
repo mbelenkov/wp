@@ -18,7 +18,7 @@ $ping_count = count($comment_type['pings']);
 		<?php
 			wp_list_comments(array(
 				'type'			=>	'comment',
-				'avatar_size'	=>	75,
+				'avatar_size'	=>	50,
 			));
 		?>
 	</ul>
