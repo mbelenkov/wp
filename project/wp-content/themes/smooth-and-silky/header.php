@@ -10,14 +10,16 @@
 <body <?php body_class(); ?>>
 <div class="wrapper">
 <header role="banner">
-  <h1 class="site-title">
-    <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home">
-      <?php bloginfo('name'); ?>
-    </a>
-  </h1>
-  <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+  <div class="top-header cf">
+    <h1 class="site-title">
+      <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home">
+        <?php bloginfo('name'); ?>
+      </a>
+    </h1>
+    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
 
-  <?php get_search_form(); ?>
+    <?php get_search_form(); ?>
+  </div>
 
   <?php
     wp_nav_menu(array(

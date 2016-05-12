@@ -1,9 +1,9 @@
 <?php
 add_editor_style();
 add_theme_support('post-thumbnails');
-add_theme_support('post-formats', array('quote', 'image', 'gallery', 'video', 'link', 'audio', 'chat', 'status', 'aside'));
 add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
 add_theme_support('title-tag');
+add_theme_support('automatic-feed-links');
 
 add_action('wp_enqueue_scripts', 'smoothandsilky_styles');
 function smoothandsilky_styles(){
@@ -99,3 +99,14 @@ function add_lightbox_rel($content){
 	$content = str_replace("%LIGHTID%", $post->ID, $content);
     return $content;
 }
+
+function smoothandsilky_excerpt_length() {
+	return 17;
+}
+add_filter('excerpt_length', 'smoothandsilky_excerpt_length');
+function smoothandsilky_read_more($more){
+	return $more . '<br><a href="' . get_permalink() . '" class="read-more">Read More</a>';
+}
+add_filter('excerpt_more', 'smoothandsilky_read_more');
+
+if ( ! isset( $content_width ) ) $content_width = 670;

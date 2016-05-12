@@ -1,8 +1,8 @@
 <footer id="footer" role="contentinfo">
-	<section class="footer-widgets-area">
+	<section class="footer-widgets-area cf">
 	<?php dynamic_sidebar('footer-widgets'); ?>
 	</section>
-	<section class="footer-widgets-area">
+	<section class="footer-widgets-area cf">
 	<?php dynamic_sidebar('footer-widgets-2'); ?>
 	</section>
 

@@ -9,14 +9,18 @@
       <h2 class="entry-title"><?php the_title(); ?></h2>
 
       <div class="entry-content cf">
-        <div>
+        <div class="post-data">
           <span class="author">Posted by: <?php the_author(); ?></span> on 
           <span class="date"><?php the_date(); ?></span>
         </div>
         <?php
           if(is_singular()):
             if(has_post_thumbnail()){
-              the_post_thumbnail();
+              ?>
+              <figure class="blog-featured-image">
+                <?php the_post_thumbnail(); ?>
+              </figure>
+              <?php
             }
             the_content();
           else:

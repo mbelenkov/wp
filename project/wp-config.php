@@ -19,14 +19,15 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'maksim_wp_project');
-
-/** MySQL database username */
-define('DB_USER', 'maksim_belenkov');
-
-/** MySQL database password */
-define('DB_PASSWORD', '7nVH8prVyztH2L9z');
+if($_SERVER['HTTP_HOST'] == 'localhost'):
+	define('DB_NAME', 'maksim_wp_project');
+	define('DB_USER', 'maksim_belenkov');
+	define('DB_PASSWORD', '7nVH8prVyztH2L9z');
+else:
+	define('DB_NAME', 'slashcry_theme_test');
+	define('DB_USER', 'slashcry_maksim');
+	define('DB_PASSWORD', 'Maksim90');
+endif;
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

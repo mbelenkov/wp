@@ -1,12 +1,13 @@
 /*
-*Theme Name: Smooth and Silky
-*Theme URI: http://www.belenkovdesign.com
-*Description: A simple theme that has a dark color scheme and color customization. With a few widget areas.
-*Author: Maksim Belenkov
-*Author URI: http://www.belenkovdesign.com
-*Version: 1.0
-*Tags: TODO: add some tags
-*Text Domain: TODO: theme name
+Theme Name: Smooth and Silky
+Theme URI: http://www.belenkovdesign.com/smoothandsilky
+Description: A simple theme that has a dark color scheme and supports pages, blogs, and products. Also includes a few widget areas.
+Author: Maksim Belenkov
+Author URI: http://www.belenkovdesign.com
+Version: 1.0
+License: GPLv2
+License URI: license.txt
+Tags: dark
 */
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Alegreya+Sans:400,400italic,700,300);
@@ -40,6 +41,135 @@ $font_2: 'Montserrat';
 .cf {
 	@include clearfix();
 }
+header {
+	background-color: $color4;
+	margin-bottom: 1%;
+
+	div.top-header {
+		border-bottom: 2px solid $color1;
+		padding: 0 5%;
+		h1, h2 {
+			display: inline-block;
+			width: 70%;
+			float: left;
+		}
+		h2 {
+			color: $color1;
+			margin-bottom: 5px;
+		}
+		form.search-form {
+			float: right;
+
+			span.screen-reader-text {
+				display: none;
+			}
+			input[type="search"]{
+				background-color: $color5;
+				border: none;
+				color: $color4;
+				padding: 3px;
+				outline: none;
+			}
+			input[type="submit"]{
+				border: none;
+				background-color: $color1;
+				color: $color4;
+				padding: 3px 5px;
+				margin-left: -3px;
+
+				&:hover {
+					background-color: $color3;
+				}
+			}
+		}
+	} 
+	nav ul  {
+		text-align: right;
+		padding: 0 5%;
+		li {
+			display: inline;
+			box-sizing:border-box;
+
+			a {
+				color: $color1;
+				font-size: 1.1em;
+				display: inline-block;
+				padding: 10px;
+
+				&:hover {
+					background-color: $color3;
+					color: $color4;
+				}
+			}
+		}
+		li.current_page_item a {
+			background-color: $color1;
+			color: $color4;
+		}
+	}
+}
+body.post-type-archive-product,
+body.tax-brand {
+	.blog-posts {
+		h2.page-title {
+			background-color: $color4;
+			color: $color1;
+			margin: 0 0 7px 0;
+			padding: 10px;
+			text-align: center;
+		}
+		article {
+			float: left;
+			margin: 2.25%;
+			width: 40%;
+		}
+	}
+}
+body.single-product {
+	section.blog-posts{
+		width: 100%;
+		text-align: center;
+
+		h3 {
+			font-size: 1em;
+		}
+		p {
+			border-top: 1px solid $color4;
+			padding-top: 10px;
+		}
+		a.back-to-products {
+			background-color: $color4;
+			color: $color1;
+			padding: 5px;
+			display: inline-block;
+			margin-bottom: 7px;
+
+			&:hover {
+				background-color: $color3;
+				color: $color4;
+			}
+		}
+	}
+}
+body.home.page-template-default,
+body.page-template-template-no-sidebar,
+body.page-template-default {
+	.front-page-banner {
+		img {
+			box-sizing: border-box;
+			max-width: 90%;
+			margin: 0 5% 1% 5%;
+		}
+	}
+	.blog-posts {
+		width: 100%;
+	}
+}
+body.page-template-default {
+	.blog-posts {
+		width: 67%;
+	}
+}
 body {
 	font-family: $font_1;
 	background-color: $color1;
@@ -51,6 +181,7 @@ body {
 
 		&.site-title {
 			margin-bottom: 0;
+			margin-top: 10px;
 		}
 	}
 	h2 {
@@ -61,6 +192,12 @@ body {
 
 		&.entry-title {
 			margin: 0 0 15px 0;
+		}
+		&.site-description {
+			font-size: 1em;
+			margin: 5px 0 0 0;
+			font-family: $font_1;
+			font-weight: 300;
 		}
 	}
 	h1+h2 {
@@ -143,14 +280,19 @@ body {
 	}
 	.alignleft {
 		float: left;
-		margin: 2px 15px 2px 0;
+		margin: 2px 15px 10px 0;
 	}
 	.alignright {
 		float: right;
-		margin: 2px 0 2px 15px;
+		margin: 2px 0 10px 15px;
 	}
 	.aligncenter {
 		margin: 0 auto;
+		display: block;
+		clear: both;
+	}
+	.alignnone {
+		clear: both;
 	}
 	main {
 		line-height: 1.3em;
@@ -160,22 +302,47 @@ body {
 			width: 67.5%;
 			float: left;
 
+			.blog-featured-image {
+				display: inline-block;
+				margin-bottom: 10px;
+			}
 			article {
 				border: 3px solid $color4;
 				border-left: 15px solid $color4;
-				margin-bottom: 10px;
+				margin-bottom: 1%;
 				padding: 10px;
+
+				h2 {
+					clear: both;
+				}
 			}
 			div {
 				&.entry-content {
 					margin-left: 0;
 				}
-				&.entry-content div:nth-child(1) {
-					margin-bottom: 10px;
+				&.entry-content div.post-data {
+					margin-bottom: 1%;
 					background-color: $color4;
 					color: $color1;
 					padding: 5px;
 					text-align: center;
+				}
+				figure.gallery-item {
+					width: 30%;
+					float: left;
+					margin: 1.5% 1.5%;
+					box-sizing: border-box;
+
+					div.gallery-icon {
+						background-color: $color5;
+						padding: 0;
+						text-align: center;
+						margin-bottom: 5px;
+					}
+					.gallery-caption {
+						border-top: 2px solid $color1;
+						padding-top: 5px;
+					}
 				}
 			}
 
@@ -236,20 +403,19 @@ body {
 					margin-bottom: 10px;
 				}
 			}
-			ul {
-				li {
+			ul li {
 					border-left: 2px solid $color4;
 					padding-left: 5px;
 					margin: 5px 0 5px 5px;
-				}
+					list-style-type: none;
 			}
 			ol {
 				margin-left: 35px;
 
 				li {
 					margin: 0 0 5px 0;
-
 					list-style-type: decimal-leading-zero;
+
 					ol {
 						margin-left: 2px;
 						border-left: 2px solid $color4;
@@ -264,7 +430,16 @@ body {
 							}
 						}
 					}
+					ul li {
+						list-style-type: none;
+
+						ol li {
+							list-style-type: lower-latin;
+						}
+					}
 				}
+			}
+			ul li {
 			}
 			abbr,
 			acronym {
@@ -329,6 +504,38 @@ body {
 			}
 			.comments {
 				margin-bottom: 10px;
+			}
+			section.comments+section {
+				ul {
+					margin: 0;
+					li {
+						border-left: none;
+						margin: 0;
+						padding-left: 0;
+
+						.comment-meta {
+							background-color: initial;
+							border-bottom: 1px solid $color4;
+							padding-bottom: 5px;
+						}
+						.comment-author {
+							margin: 5px 0;
+						}
+						.edit-link {
+							float: right;
+
+							a {
+								padding: 2px 10px;
+								background-color: $color5;
+								color: $color4;
+
+								&:hover {
+									background-color: $color3;
+								}
+							}
+						}
+					}
+				}
 			}
 			nav.navigation.pagination {
 				border: 3px solid $color4;
@@ -428,6 +635,10 @@ body {
 							.comment-author,
 							.comment-metadata {
 								padding: 10px;
+
+								.says {
+									display: none;
+								}
 							}
 							.comment-author b,
 							.comment-author span {
@@ -463,6 +674,17 @@ body {
 					}
 					ul li {
 						margin-left: 10px;
+					}
+				}
+				.bypostauthor article {
+					border-color: $color3;
+
+					.comment-meta {
+						border-color: $color3;
+
+						img {
+							background-color: $color3;
+						}
 					}
 				}
 			}
@@ -504,50 +726,154 @@ body {
 	}
 	footer {
 		clear: both;
-		background-color: $color2;
+		background-color: $color4;
 		
 		p {
+			color: $color1;
 			text-align: center;
-			padding: 10px;
+			padding: 8px;
 			margin: 0;
 		}
 		.footer-widgets-area {
 			background-color: $color1;
-			border-top: 1px solid $color2;
+			border-top: 1px solid $color4;
+			padding: 0 5% 15px;
 		}
 		.footer-widgets,
 		.footer-widgets-2 {
-			width: 25%;
-			display: inline-block;
+			width: 23%;
+			margin: 0 1%;
+			display: block;
+			float: left;
 
-			.tagcloud {
-				/*a {
-					border: 1px solid $color3;
-					&:hover {
-						border: 1px solid $color2;
-					}
-				}*/
+			&:nth-child(1){
+				margin-left: 0;
 			}
-			.calendar_wrap {
-				table {
-					border: 1px solid $color2;
-				}
+			&:nth-child(4){
+				margin-right: 0;
+			}
+			ul li {
+				border-left: 2px solid $color4;
+				padding-left: 8px;
+				margin: 5px 0;
 			}
 		}
 	}
 	#sidebar {
-		width: 27.5%;
+		width: 30%;
 		float: right;
-		margin-left: 1.6%;
-		border: 3px solid $color4;
-		border-right: 15px solid $color4;
-		padding: 10px;
+		margin-left: 1.59%;
 
+		.widgettitle {
+			margin-top: 5px;
+		}
+		section {
+			border: 3px solid $color4;
+			border-right: 15px solid $color4;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
 		select {
 			max-width: 100%;
+		}
+		#loginform {
+			label,
+			input[type="text"],
+			input[type="password"] {
+				display: block;
+			}
+			input[type="text"],
+			input[type="password"] {
+				width: 98%;
+				background-color: $color5;
+				border: none;
+				padding: 5px;
+				outline: none;
+				color: $color4;
+			}
+			p {
+				margin-top: 10px;
+			}
 		}
 	}
 	.wp-caption {
 		max-width: 99%;
+
+		.wp-caption-text {
+			border-top: 2px solid $color1;
+			padding-top: 5px;
+		}
+	}
+	.calendar_wrap table {
+		border: 1px solid $color4;
+		margin: 25px auto 0;
+
+		thead th {
+			background-color: $color4;
+			color: $color1;
+		}
+		tr {
+			border-bottom: 1px solid $color4;
+		}
+		th, td {
+			border-right: 1px solid $color4;
+			padding: 10px;
+		}
+		caption { 
+			margin-bottom: 10px;
+			font-size: 1.5em;
+		}
+		td > a {
+				display: block;
+				color: $color3;
+		}
+		td#prev,
+		td#next {
+			background-color: $color3;
+			padding: 0;
+
+			a {
+				padding: 10px;
+				display: block;
+				color: $color4;
+
+				&:hover {
+					background-color: $color2;
+				}
+			}
+		}
+	}
+	.widget_categories select,
+	.widget_archive select,
+	.widget_text select {
+		background-color: $color5;
+		color: $color4;
+		outline: none;
+	}
+	.widget_archive select {
+		margin-left: 10px;
+	}
+	.widget_rss {
+		img {
+			padding: 0;
+		}
+		li {
+			margin: 10px 0;
+		}
+	}
+	.tagcloud a {
+		font-size: 1em !important;
+		background-color: $color3;
+		padding: 5px;
+		margin: 2px;
+		color: $color4;
+		display: inline-block;
+
+		&:hover {
+			background-color: $color2;
+		}
+	}
+	img.lb-image {
+		padding: 0;
 	}
 }

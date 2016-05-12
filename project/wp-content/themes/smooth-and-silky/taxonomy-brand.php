@@ -3,7 +3,7 @@
 <main id="content" class="cf">
   <section class="blog-posts">
     <?php if(have_posts()): ?>
-    <h2><?php single_term_title(); ?> Products</h2>
+    <h2 class="page-title"><?php single_term_title(); ?> Products</h2>
     <?php while(have_posts()): the_post(); ?>
 
     <article id="post-<?php the_id(); ?>">

@@ -1,12 +1,13 @@
 /*
-*Theme Name: Smooth and Silky
-*Theme URI: http://www.belenkovdesign.com
-*Description: A simple theme that has a dark color scheme and color customization. With a few widget areas.
-*Author: Maksim Belenkov
-*Author URI: http://www.belenkovdesign.com
-*Version: 1.0
-*Tags: TODO: add some tags
-*Text Domain: TODO: theme name
+Theme Name: Smooth and Silky
+Theme URI: http://www.belenkovdesign.com/smoothandsilky
+Description: A simple theme that has a dark color scheme and supports pages, blogs, and products. Also includes a few widget areas.
+Author: Maksim Belenkov
+Author URI: http://www.belenkovdesign.com
+Version: 1.0
+License: GPLv2
+License URI: license.txt
+Tags: dark
 */
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Alegreya+Sans:400,400italic,700,300);
 .cf {
@@ -17,6 +18,100 @@
 .cf:after {
   clear: both; }
 
+header {
+  background-color: #D3CBBD;
+  margin-bottom: 1%; }
+  header div.top-header {
+    border-bottom: 2px solid #1C1919;
+    padding: 0 5%; }
+    header div.top-header h1, header div.top-header h2 {
+      display: inline-block;
+      width: 70%;
+      float: left; }
+    header div.top-header h2 {
+      color: #1C1919;
+      margin-bottom: 5px; }
+    header div.top-header form.search-form {
+      float: right; }
+      header div.top-header form.search-form span.screen-reader-text {
+        display: none; }
+      header div.top-header form.search-form input[type="search"] {
+        background-color: #403D3C;
+        border: none;
+        color: #D3CBBD;
+        padding: 3px;
+        outline: none; }
+      header div.top-header form.search-form input[type="submit"] {
+        border: none;
+        background-color: #1C1919;
+        color: #D3CBBD;
+        padding: 3px 5px;
+        margin-left: -3px; }
+        header div.top-header form.search-form input[type="submit"]:hover {
+          background-color: #EB5937; }
+  header nav ul {
+    text-align: right;
+    padding: 0 5%; }
+    header nav ul li {
+      display: inline;
+      box-sizing: border-box; }
+      header nav ul li a {
+        color: #1C1919;
+        font-size: 1.1em;
+        display: inline-block;
+        padding: 10px; }
+        header nav ul li a:hover {
+          background-color: #EB5937;
+          color: #D3CBBD; }
+    header nav ul li.current_page_item a {
+      background-color: #1C1919;
+      color: #D3CBBD; }
+
+body.post-type-archive-product .blog-posts h2.page-title,
+body.tax-brand .blog-posts h2.page-title {
+  background-color: #D3CBBD;
+  color: #1C1919;
+  margin: 0 0 7px 0;
+  padding: 10px;
+  text-align: center; }
+body.post-type-archive-product .blog-posts article,
+body.tax-brand .blog-posts article {
+  float: left;
+  margin: 2.25%;
+  width: 40%; }
+
+body.single-product section.blog-posts {
+  width: 100%;
+  text-align: center; }
+  body.single-product section.blog-posts h3 {
+    font-size: 1em; }
+  body.single-product section.blog-posts p {
+    border-top: 1px solid #D3CBBD;
+    padding-top: 10px; }
+  body.single-product section.blog-posts a.back-to-products {
+    background-color: #D3CBBD;
+    color: #1C1919;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 7px; }
+    body.single-product section.blog-posts a.back-to-products:hover {
+      background-color: #EB5937;
+      color: #D3CBBD; }
+
+body.home.page-template-default .front-page-banner img,
+body.page-template-template-no-sidebar .front-page-banner img,
+body.page-template-default .front-page-banner img {
+  box-sizing: border-box;
+  max-width: 90%;
+  margin: 0 5% 1% 5%; }
+body.home.page-template-default .blog-posts,
+body.page-template-template-no-sidebar .blog-posts,
+body.page-template-default .blog-posts {
+  width: 100%; }
+
+body.page-template-default .blog-posts {
+  width: 67%; }
+
 body {
   font-family: "Alegreya Sans";
   background-color: #1C1919;
@@ -25,7 +120,8 @@ body {
     font-size: 2em;
     margin: 25px 0 12px; }
     body h1.site-title {
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      margin-top: 10px; }
   body h2 {
     font-size: 1.5em;
     margin: 25px 0 15px;
@@ -33,6 +129,11 @@ body {
     padding-bottom: 10px; }
     body h2.entry-title {
       margin: 0 0 15px 0; }
+    body h2.site-description {
+      font-size: 1em;
+      margin: 5px 0 0 0;
+      font-family: "Alegreya Sans";
+      font-weight: 300; }
   body h1 + h2 {
     border: none;
     padding: 0;
@@ -96,31 +197,53 @@ body {
       margin: 7px auto; }
   body .alignleft {
     float: left;
-    margin: 2px 15px 2px 0; }
+    margin: 2px 15px 10px 0; }
   body .alignright {
     float: right;
-    margin: 2px 0 2px 15px; }
+    margin: 2px 0 10px 15px; }
   body .aligncenter {
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: block;
+    clear: both; }
+  body .alignnone {
+    clear: both; }
   body main {
     line-height: 1.3em;
     margin: 0 5%; }
     body main .blog-posts {
       width: 67.5%;
       float: left; }
+      body main .blog-posts .blog-featured-image {
+        display: inline-block;
+        margin-bottom: 10px; }
       body main .blog-posts article {
         border: 3px solid #D3CBBD;
         border-left: 15px solid #D3CBBD;
-        margin-bottom: 10px;
+        margin-bottom: 1%;
         padding: 10px; }
+        body main .blog-posts article h2 {
+          clear: both; }
       body main .blog-posts div.entry-content {
         margin-left: 0; }
-      body main .blog-posts div.entry-content div:nth-child(1) {
-        margin-bottom: 10px;
+      body main .blog-posts div.entry-content div.post-data {
+        margin-bottom: 1%;
         background-color: #D3CBBD;
         color: #1C1919;
         padding: 5px;
         text-align: center; }
+      body main .blog-posts div figure.gallery-item {
+        width: 30%;
+        float: left;
+        margin: 1.5% 1.5%;
+        box-sizing: border-box; }
+        body main .blog-posts div figure.gallery-item div.gallery-icon {
+          background-color: #403D3C;
+          padding: 0;
+          text-align: center;
+          margin-bottom: 5px; }
+        body main .blog-posts div figure.gallery-item .gallery-caption {
+          border-top: 2px solid #1C1919;
+          padding-top: 5px; }
       body main .blog-posts p,
       body main .blog-posts ul,
       body main .blog-posts dl,
@@ -162,7 +285,8 @@ body {
       body main .blog-posts ul li {
         border-left: 2px solid #D3CBBD;
         padding-left: 5px;
-        margin: 5px 0 5px 5px; }
+        margin: 5px 0 5px 5px;
+        list-style-type: none; }
       body main .blog-posts ol {
         margin-left: 35px; }
         body main .blog-posts ol li {
@@ -176,6 +300,10 @@ body {
               list-style-type: upper-latin; }
               body main .blog-posts ol li ol li ol li {
                 list-style-type: lower-latin; }
+          body main .blog-posts ol li ul li {
+            list-style-type: none; }
+            body main .blog-posts ol li ul li ol li {
+              list-style-type: lower-latin; }
       body main .blog-posts abbr,
       body main .blog-posts acronym {
         border-bottom: 1px solid #EB5937; }
@@ -231,6 +359,26 @@ body {
           margin: 5px 0 5px 2px; }
       body main .blog-posts .comments {
         margin-bottom: 10px; }
+      body main .blog-posts section.comments + section ul {
+        margin: 0; }
+        body main .blog-posts section.comments + section ul li {
+          border-left: none;
+          margin: 0;
+          padding-left: 0; }
+          body main .blog-posts section.comments + section ul li .comment-meta {
+            background-color: initial;
+            border-bottom: 1px solid #D3CBBD;
+            padding-bottom: 5px; }
+          body main .blog-posts section.comments + section ul li .comment-author {
+            margin: 5px 0; }
+          body main .blog-posts section.comments + section ul li .edit-link {
+            float: right; }
+            body main .blog-posts section.comments + section ul li .edit-link a {
+              padding: 2px 10px;
+              background-color: #403D3C;
+              color: #D3CBBD; }
+              body main .blog-posts section.comments + section ul li .edit-link a:hover {
+                background-color: #EB5937; }
       body main .blog-posts nav.navigation.pagination {
         border: 3px solid #D3CBBD;
         border-left: 15px solid #D3CBBD;
@@ -305,6 +453,9 @@ body {
             body main .comments ul li article .comment-meta .comment-author,
             body main .comments ul li article .comment-meta .comment-metadata {
               padding: 10px; }
+              body main .comments ul li article .comment-meta .comment-author .says,
+              body main .comments ul li article .comment-meta .comment-metadata .says {
+                display: none; }
             body main .comments ul li article .comment-meta .comment-author b,
             body main .comments ul li article .comment-meta .comment-author span {
               position: relative;
@@ -329,6 +480,12 @@ body {
                 background-color: #EB5937; }
         body main .comments ul li ul li {
           margin-left: 10px; }
+      body main .comments ul .bypostauthor article {
+        border-color: #EB5937; }
+        body main .comments ul .bypostauthor article .comment-meta {
+          border-color: #EB5937; }
+          body main .comments ul .bypostauthor article .comment-meta img {
+            background-color: #EB5937; }
     body main .comment-respond {
       margin: 30px; }
       body main .comment-respond p {
@@ -353,39 +510,116 @@ body {
           background-color: #EB5937; }
   body footer {
     clear: both;
-    background-color: #456F74; }
+    background-color: #D3CBBD; }
     body footer p {
+      color: #1C1919;
       text-align: center;
-      padding: 10px;
+      padding: 8px;
       margin: 0; }
     body footer .footer-widgets-area {
       background-color: #1C1919;
-      border-top: 1px solid #456F74; }
+      border-top: 1px solid #D3CBBD;
+      padding: 0 5% 15px; }
     body footer .footer-widgets,
     body footer .footer-widgets-2 {
-      width: 25%;
-      display: inline-block; }
-      body footer .footer-widgets .tagcloud,
-      body footer .footer-widgets-2 .tagcloud {
-        /*a {
-        	border: 1px solid $color3;
-        	&:hover {
-        		border: 1px solid $color2;
-        	}
-        }*/ }
-      body footer .footer-widgets .calendar_wrap table,
-      body footer .footer-widgets-2 .calendar_wrap table {
-        border: 1px solid #456F74; }
+      width: 23%;
+      margin: 0 1%;
+      display: block;
+      float: left; }
+      body footer .footer-widgets:nth-child(1),
+      body footer .footer-widgets-2:nth-child(1) {
+        margin-left: 0; }
+      body footer .footer-widgets:nth-child(4),
+      body footer .footer-widgets-2:nth-child(4) {
+        margin-right: 0; }
+      body footer .footer-widgets ul li,
+      body footer .footer-widgets-2 ul li {
+        border-left: 2px solid #D3CBBD;
+        padding-left: 8px;
+        margin: 5px 0; }
   body #sidebar {
-    width: 27.5%;
+    width: 30%;
     float: right;
-    margin-left: 1.6%;
-    border: 3px solid #D3CBBD;
-    border-right: 15px solid #D3CBBD;
-    padding: 10px; }
+    margin-left: 1.59%; }
+    body #sidebar .widgettitle {
+      margin-top: 5px; }
+    body #sidebar section {
+      border: 3px solid #D3CBBD;
+      border-right: 15px solid #D3CBBD;
+      padding: 10px;
+      margin-bottom: 10px; }
     body #sidebar select {
       max-width: 100%; }
+    body #sidebar #loginform label,
+    body #sidebar #loginform input[type="text"],
+    body #sidebar #loginform input[type="password"] {
+      display: block; }
+    body #sidebar #loginform input[type="text"],
+    body #sidebar #loginform input[type="password"] {
+      width: 98%;
+      background-color: #403D3C;
+      border: none;
+      padding: 5px;
+      outline: none;
+      color: #D3CBBD; }
+    body #sidebar #loginform p {
+      margin-top: 10px; }
   body .wp-caption {
     max-width: 99%; }
+    body .wp-caption .wp-caption-text {
+      border-top: 2px solid #1C1919;
+      padding-top: 5px; }
+  body .calendar_wrap table {
+    border: 1px solid #D3CBBD;
+    margin: 25px auto 0; }
+    body .calendar_wrap table thead th {
+      background-color: #D3CBBD;
+      color: #1C1919; }
+    body .calendar_wrap table tr {
+      border-bottom: 1px solid #D3CBBD; }
+    body .calendar_wrap table th, body .calendar_wrap table td {
+      border-right: 1px solid #D3CBBD;
+      padding: 10px; }
+    body .calendar_wrap table caption {
+      margin-bottom: 10px;
+      font-size: 1.5em; }
+    body .calendar_wrap table td > a {
+      display: block;
+      color: #EB5937; }
+    body .calendar_wrap table td#prev,
+    body .calendar_wrap table td#next {
+      background-color: #EB5937;
+      padding: 0; }
+      body .calendar_wrap table td#prev a,
+      body .calendar_wrap table td#next a {
+        padding: 10px;
+        display: block;
+        color: #D3CBBD; }
+        body .calendar_wrap table td#prev a:hover,
+        body .calendar_wrap table td#next a:hover {
+          background-color: #456F74; }
+  body .widget_categories select,
+  body .widget_archive select,
+  body .widget_text select {
+    background-color: #403D3C;
+    color: #D3CBBD;
+    outline: none; }
+  body .widget_archive select {
+    margin-left: 10px; }
+  body .widget_rss img {
+    padding: 0; }
+  body .widget_rss li {
+    margin: 10px 0; }
+  body .tagcloud a {
+    font-size: 1em !important;
+    background-color: #EB5937;
+    padding: 5px;
+    margin: 2px;
+    color: #D3CBBD;
+    display: inline-block; }
+    body .tagcloud a:hover {
+      background-color: #456F74; }
+  body img.lb-image {
+    padding: 0; }
 
 /*# sourceMappingURL=style.css.map */

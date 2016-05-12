@@ -2,7 +2,7 @@
 
 <main id="content" class="cf">
   <section class="blog-posts">
-    <a href="<?php echo get_post_type_archive_link('product'); ?>">Back to Products</a>
+    <a class="back-to-products" href="<?php echo get_post_type_archive_link('product'); ?>">Back to Products</a>
     <?php if(have_posts()): ?>
     <?php while(have_posts()): the_post(); ?>
 
@@ -30,11 +30,6 @@
             the_excerpt();
           endif;
         ?>
-      </div>
-
-      <div class="postmeta">
-        <span class="categories"><?php the_category(); ?></span>
-        <span class="tags"><?php the_tags(); ?></span>
       </div>
     </article>
 
