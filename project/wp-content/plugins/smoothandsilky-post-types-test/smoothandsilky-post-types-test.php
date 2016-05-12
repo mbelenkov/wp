@@ -41,7 +41,7 @@ function smoothandsilky_register_cpt(){
 	));
 }
 function smoothandsilky_flush(){
-	rad_register_cpt();
+	smoothandsilky_register_cpt();
 	flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'smoothandsilky_flush');

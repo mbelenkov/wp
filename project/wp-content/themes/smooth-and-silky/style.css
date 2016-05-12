@@ -499,6 +499,24 @@ body {
           outline: none; }
       body main .comment-respond input[type="submit"] {
         margin-left: 0; }
+      body main .comment-respond .comment-form-author,
+      body main .comment-respond .comment-form-email,
+      body main .comment-respond .comment-form-url {
+        margin-bottom: 5px; }
+        body main .comment-respond .comment-form-author label,
+        body main .comment-respond .comment-form-author input,
+        body main .comment-respond .comment-form-email label,
+        body main .comment-respond .comment-form-email input,
+        body main .comment-respond .comment-form-url label,
+        body main .comment-respond .comment-form-url input {
+          display: block; }
+        body main .comment-respond .comment-form-author input,
+        body main .comment-respond .comment-form-email input,
+        body main .comment-respond .comment-form-url input {
+          background-color: #403D3C;
+          border: 1px solid #D3CBBD;
+          color: #D3CBBD;
+          padding: 5px; }
     body main .comment-pagination {
       display: inline-block;
       background-color: #403D3C; }

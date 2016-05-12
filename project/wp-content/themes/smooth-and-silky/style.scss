@@ -708,6 +708,22 @@ body {
 			input[type="submit"]{
 				margin-left: 0;
 			}
+			.comment-form-author,
+			.comment-form-email,
+			.comment-form-url {
+				margin-bottom: 5px;
+
+				label,
+				input {
+					display: block;
+				}
+				input {
+					background-color: $color5;
+					border: 1px solid $color4;
+					color: $color4;
+					padding: 5px;
+				}
+			}
 		}
 		.comment-pagination {
 			display: inline-block;
